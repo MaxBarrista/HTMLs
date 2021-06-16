@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>Вариант 13</title>
+	<style>
+		BODY {width: 900px; position: absolute; left: 200px;}
+		DIV.dotted_block {position: relative; left: 10%; padding-left: 50px; width: 75%; border: dotted 2px}
+		TABLE.table2 { 
+			width: 80%; 
+			border-collapse: collapse;
+		}
+		.hsides > TD { 
+			border-top: 1px solid black;
+			border-bottom: 1px solid black;
+		}
+		TD {vertical-align : top; }
+	</style>
+</head>
+<body>
+	<p><em>Коллекция</em> - это своего рода массив объектов, проиндексированный не только по числовым номерам элементов, но и по их
+	именам, и имеющий свойства и методы. Коллекция отличается от ассоциативного массива именно наличием свойств и
+	методов, т.е. коллекция - сама по себе объект. </p>
+	<p>Рассмотрим, например, коллекцию images, которую включает в себя объект document. Вы можете получить доступ к
+	отдельным ее элементам по порядковому номеру или уникальному имени.</p>
+	<div class="dotted_block">
+		document.images.item(1)<br>
+		document.images("iamge1")
+	</div>
+	<p>Заметьте, что мы указываем индекс элемента коллекции не в квадратных, а в круглых скобках, потому что он фактически
+	является аргументом функции-метода item, поддерживаемой всеми коллекциями. Имя этого метода можно опускать.</p>
+	<div class="dotted_block">
+		document.images(1)<br>
+		document.images("image1")
+	</div>
+	<p>Все элементы Web-страницы нумеруются в порядке их появления в HTML-коде. А уникальные имена задаются специальным
+	атрибутом <em>ID</em>, доступным практически во всех тегах.</p>
+	<div class="dotted_block">
+		<code>&lt;IMG src="img1.gif" id="image1"&gt;<br>
+		&lt;SCRIPT&gt;<br>
+		&lt;!--<br>
+		var someImage = document.images("image1");<br>
+		--&gt;<br>
+		&lt;/SCRIPT&gt;</code>
+	</div>
+	<h2>Обработчики событий</h2>
+	<p>Обработчики событий <code>onBlur</code>, <code>onFocus</code>, <code>onLoad</code> и <code>onUnload</code> специфицируются в тэге <code>BODY</code>, но реально являются
+	обработчиками событий объекта <a href="ссылка1.html">window</a>. Вот обработчики событий объекта document:</p>	
+	<table style="width:100%">
+		<tr>
+			<td>
+				<UL><LI><a href="ссылка1.html"><code>onClick</code></a></LI>
+				<LI><a href="ссылка1.html"><code>onDblClick</code></a></LI>
+				<LI><a href="ссылка1.html"><code>onKeyDown</code></a></LI>
+				<LI><a href="ссылка1.html"><code>onKeyPress</code></a></LI></UL>
+			</td>
+			<td>
+				<UL><LI><a href="ссылка1.html"><code>onKeyUp</code></a></LI>
+				<LI><a href="ссылка1.html"><code>onMouseDown</code></a></LI>
+				<LI><a href="ссылка1.html"><code>onMouseUp</code></a></LI></UL>
+			</td>
+		</tr>		
+	</table>
+	<h2>alinkColor</h2>
+	<hr>
+	<p>Строка, специфицирующая цвет активной гиперссылки (после нажатия кнопки мыши, но до её отпускания)</p>	
+	<table class="table2">
+		<tr class="hsides">
+			<td><em>Свойство из</em></td><td><a href="ссылка1.html"><code>document</code></a></td>
+		</tr>
+		<tr class="hsides">
+			<td><em>Реализовано в</em></td><td>JavaScript 1.0</td>
+		</tr>
+	</table>
+	<h5>Описание</h5>
+	<p>Свойство <code>alinkColor</code> выражается как 16-ричный триплет RGB или как строковой литерал 
+	(см. книгу <a href="ссылка1.html"><em>Клиентский JavaScript. Руководство</em></a><sup>[12]</sup>.). 
+	Это свойство является отражением в JavaScript атрибута ALINK тэга BODY. Если Вы выводите цвет как 16-ричный триплет RGB, 
+	Вы обязаны использовать формат <code>rrggbb</code>. Например, 16-ричное значение RGB цвета salmon будет <code>red=FA, green=80</code> и 
+	<code>blue=72</code>, так что RGB-триплет для salmon будет "<code>FA8072</code>".</p>
+	<h5>Пример</h5>
+	<p>В этом примере устанавливается цвет активной гиперссылки с использованием строкового литерала:<br>
+	<code>document.alinkColor="aqua"<br>
+	Здесь устанавливается цвет активной ссылки aqua с использованием 16-ричного триплета:<br>
+	document.alinkColor="00FFFF"</code></p>
+</body>
+</html>
